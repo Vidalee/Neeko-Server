@@ -1,0 +1,27 @@
+{
+  "name": "neeko-server",
+  "version": "1.0.0",
+  "description": "Record games and emulate a League of Legends spectator server to watch them.",
+  "repository": "https://github.com/Vidalee/Neeko-Server",
+  "displayName": "Neeko Server",
+  "author": {
+    "name": "Vivi",
+    "email": "vivi@vivide.re",
+    "url": "https://github.com/Vidalee"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "npm run build && npm run start"
+  },
+  "dependencies": {
+    "fastify": "^3.27.2",
+    "twisted": "^1.46.5"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21"
+  }
+}

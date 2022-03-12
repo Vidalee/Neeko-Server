@@ -1,0 +1,42 @@
+{
+    "riot_api_key": "RGAPI-YOUR-API-KEY-hERE",
+    "spectator_servers": {
+        "EUW1": "185.40.64.163:80",
+        "NA1": "192.64.174.163:80",
+        "EUN1": "110.45.191.11:8088",
+        "KR": "110.45.191.11:8088",
+        "BR1": "66.151.33.19:80",
+        "TR1": "95.172.65.242:80",
+        "TW": "112.121.84.194:8088",
+        "LA1": "66.151.33.19:80",
+        "LA2": "66.151.33.19:80",
+        "RU": "95.172.65.242:80",
+        "PBE1": "69.88.138.29:8088",
+        "OC1": "95.172.65.242:80"
+    },
+    "paths": {
+        "games": "games"
+    },
+    "server": {
+        "address": "127.0.0.1",
+        "port": 3000,
+        "logger": false,
+        "secrets": {
+            "spectate_secret": "spectate_secret",
+            "check_spectate_secret": false,
+            "statistics_secret": "statistics_secret",
+            "check_statistics_secret": false
+        }
+    },
+    "spectator": {
+        "logger": true,
+        "get_riot_match_details": true
+    },
+    "spectator_manager": {
+        "logger": true
+    },
+    "replay_manager": {
+        "logger": true
+    },
+    "use_ansi_colors": true
+}
