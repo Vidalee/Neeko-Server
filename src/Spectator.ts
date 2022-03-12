@@ -206,8 +206,8 @@ export class Spectator {
             await response.data.pipe(fs.createWriteStream(`${config.paths.games}/${this.game.gameId}/chunks/${chunkId}.bin`));
 
         } catch (error) {
-            //This is not really an error since we iterate through all the chunks knwowing that
-            //if we start spectating midgame we will not be able to get a bunch of chunks.
+            // This is not really an error since we iterate through all the chunks knwowing that
+            // if we start spectating midgame we will not be able to get past chunks.
             this.logError(`Chunk no longer/not yet available: ${error}`);
         }
     }
@@ -235,8 +235,8 @@ export class Spectator {
             await response.data.pipe(fs.createWriteStream(`${config.paths.games}/${this.game.gameId}/keyframes/${keyFrameId}.bin`));
 
         } catch (error) {
-            //This is not really an error since we iterate through all the chunks knwowing that
-            //if we start spectating midgame we will not be able to get a bunch of chunks.
+            // This is not really an error since we iterate through all the keyFrames knwowing that
+            // if we start spectating midgame we will not be able to get past keyFrames.
             this.logError(`KeyFrame no longer/not yet available: ${error}`);
         }
     }
