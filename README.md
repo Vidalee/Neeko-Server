@@ -101,6 +101,37 @@ As with the endpoint above, you can secure this one using `config.server.secret.
 
 It provides statistics, mainly the list of the games that are currently being recorded, and those which are already saved. One interesting thing about this endpoint is that you can specify custom game data if you enabled the `config.spectator.get_riot_match_details` endpoint. You just need to edit the `getCustomGameStats` function, located in the [`src/utils/getCustomGameStats.ts`](src/utils/getCustomGameStats.ts) file. I set it to output the largest multi kill in a match as an example.
 
+Here is an example response:
+```json
+{
+	"spectators": [ // Spectators client, one for each game currently being recorded
+		{
+			"gameId": 1234567890,
+			"region": "EUW1",
+			"targetSummonerName": "Player 1",
+			"date": "Mar 6, 2022 2:13:19 PM",
+			"liveGameMinutes": 17,
+			"interestScore": 1932
+		}
+	],
+	"games": [ // Games stored on the spectator server
+		{
+			"gameId": 1234567891,
+			"region": "EUW1",
+			"targetSummonerName": "Player 2",
+			"date": "Mar 6, 2022 12:27:03 PM",
+			"interestScore": 1097,
+			"gameLength": 0,
+			"gameMode": "CLASSIC",
+			"gameType": "MATCHED_GAME",
+			"custom": {
+				"largestMultiKill": 3
+			}
+		}
+	]
+}
+```
+
 ### GET `/spectate/windows/:gameId`
 
 Download a .bat file that will launch the League of Legends client to spectate the specified game ID on our spectator server. The corresponding game must have been recorded previously using the application.
