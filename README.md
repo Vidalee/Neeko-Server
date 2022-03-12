@@ -144,3 +144,7 @@ Download a .bat file that will launch the League of Legends client to spectate t
 ## Development
 
 Feel free to propose any PR, they are very welcome especially on the fastify error code management (errors getting caught inside the router functions) and on the architecture of the project.
+
+## Inspiration
+
+Special thanks to the loldevs team for their work on reversing the League of Legends spectator servers nearly a decade ago (https://github.com/loldevs/leaguespec) and more so to Divi for his past implementation of a spectator server (https://github.com/EloGank/lol-replay-downloader) that inspired me for the getLastChunkInfo endpoint implementation.
