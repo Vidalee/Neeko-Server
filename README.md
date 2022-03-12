@@ -4,6 +4,7 @@ Neeko-Server is an application that record games emulates a League of Legends sp
 
 It is an asynchronous software capable of recording multiple League of Legends live games at the same time, while simultaneously allowing multiple League of Legends clients to watch different games at the same time.
 
+
 If you have any questions of want to participate to the development, feel free to join this Discord server: https://discord.gg/gqkjwBK58Z
 
 ## Building
@@ -94,6 +95,8 @@ BR1, EUN1, EUW1, KR, LA1, LA2, NA1, OC1, TR1, RU, JP1 and PBE1
 The summonerName option is the name of the summoner whose game you want to record.
 
 Additionally, you can specify a secret in `config.server.secret.spectate_secret`, and if `config.server.secret.check_spectate_secret` is enabled, the request will not go through unless you have a `Secret` header which value matches with `config.server.secret.spectate_secret`.
+
+When recording a game that has already started, you may see a lots of chunks unavailables on the console. These are not errors, it is just not possible to get the past data of a game, only the data from the moment ou started spectating.
 
 ### GET `/spectate/statistics`
 
