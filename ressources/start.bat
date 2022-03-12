@@ -1,3 +1,5 @@
+:: From leagueofgraphs.com by Trebonius
+
 @echo off
 setlocal enabledelayedexpansion
 
