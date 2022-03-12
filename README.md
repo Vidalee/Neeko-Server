@@ -46,9 +46,9 @@ Rename config.example.json to config.json.
         "logger": false, // Wether to enable the fastify logger or not
         "secrets": {
             "spectate_secret": "spectate_secret", // Secret of the /spectate endpoint.
-            "check_spectate_secret": true, // Wheter to use it or not
+            "check_spectate_secret": true, // Wether to use it or not
             "statistics_secret": "statistics_secret",  // Secret of the /spectate endpoint.
-            "check_statistics_secret": true // Wheter to use it or not
+            "check_statistics_secret": true // Wether to use it or not
         }
     },
     "spectator": {
@@ -82,24 +82,13 @@ If you just want to serve games you already recorded, the API key is not necessa
 ## Server endpoints
 
 
-### GET `/admin//spectate/:region/:summonerName`
+### GET `/admin/spectate/:region/:summonerName`
 
 
 Record the live game of a summoner. The region options are:
 
 ```
-BR1
-EUN1
-EUW1
-KR
-LA1
-LA2
-NA1
-OC1
-TR1
-RU
-JP1
-PBE1
+BR1, EUN1, EUW1, KR, LA1, LA2, NA1, OC1, TR1, RU, JP1 and PBE1
 ```
 
 The summonerName option is the name of the summoner whose game you want to record.
@@ -110,7 +99,7 @@ Additionally, you can specify a secret in `config.server.secret.spectate_secret`
 
 As with the endpoint above, you can secure this one using `config.server.secret.statistics_secret`
 
-It provides statistics, mainly the list of the games that are currently being recorded, and those which are already saved. One interesting thing about this endpoint is that you can specify custom game data if you enabled the `config.spectator.get_riot_match_details` endpoint. You just need to edit the `getCustomGameStats` function, located in the `src/utils/getCustomGameStats.ts` file. I set it to output the largest multi kill in a match as an example.
+It provides statistics, mainly the list of the games that are currently being recorded, and those which are already saved. One interesting thing about this endpoint is that you can specify custom game data if you enabled the `config.spectator.get_riot_match_details` endpoint. You just need to edit the `getCustomGameStats` function, located in the [`src/utils/getCustomGameStats.ts`](src/utils/getCustomGameStats.ts) file. I set it to output the largest multi kill in a match as an example.
 
 ### GET `/spectate/windows/:gameId`
 
