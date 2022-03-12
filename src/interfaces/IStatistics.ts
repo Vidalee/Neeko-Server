@@ -4,7 +4,7 @@ export interface IStatistics {
 };
 
 export interface IStatisticsSpectator {
-    gameId: string;
+    gameId: number;
     region: string;
     targetSummonerName: string;
     date: string;
@@ -15,7 +15,7 @@ export interface IStatisticsSpectator {
 }
 
 export interface IStatisticsGame {
-    gameId: string;
+    gameId: number;
     region: string;
     targetSummonerName: string;
     date: string;

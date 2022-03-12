@@ -3,7 +3,7 @@ import { IPendingAvailableKeyFrameInfo } from "./IPendingAvailableKeyFrameInfo";
 
 export interface IMetaData {
     gameKey: {
-        gameId: string;
+        gameId: number;
         platformId: string;
     },
     gameServerAddress: string;

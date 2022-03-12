@@ -46,7 +46,7 @@ export class Spectator {
 
     public getStatistics(): IStatisticsSpectator {
         return {
-            gameId: this.game.gameId.toString(),
+            gameId: this.game.gameId,
             region: this.region,
             targetSummonerName: this.game.custom.targetSummonerName,
             date: this.game.custom.date,
