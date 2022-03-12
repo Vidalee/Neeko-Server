@@ -7,5 +7,6 @@ export default function getCustomGameStats(match: MatchV5DTOs.MatchDto): any {
         if (participant.largestMultiKill > largestMultiKill)
             largestMultiKill = participant.largestMultiKill;
     }
-    return { largestMultiKill: largestMultiKill };
+    const gameMinutes = Math.round(match.info.gameDuration / 60);
+    return { largestMultiKill: largestMultiKill, gameMinutes: gameMinutes};
 }

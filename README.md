@@ -99,7 +99,7 @@ Additionally, you can specify a secret in `config.server.secret.spectate_secret`
 
 As with the endpoint above, you can secure this one using `config.server.secret.statistics_secret`
 
-It provides statistics, mainly the list of the games that are currently being recorded, and those which are already saved. One interesting thing about this endpoint is that you can specify custom game data if you enabled the `config.spectator.get_riot_match_details` endpoint. You just need to edit the `getCustomGameStats` function, located in the [`src/utils/getCustomGameStats.ts`](src/utils/getCustomGameStats.ts) file. I set it to output the largest multi kill in a match as an example.
+It provides statistics, mainly the list of the games that are currently being recorded, and those which are already saved. One interesting thing about this endpoint is that you can specify custom game data if you enabled the `config.spectator.get_riot_match_details` endpoint. You just need to edit the `getCustomGameStats` function, located in the [`src/utils/getCustomGameStats.ts`](src/utils/getCustomGameStats.ts) file. I set it to output the largest multi kill in a match, and its duration in minutes as an example.
 
 Here is an example response:
 ```json
@@ -125,7 +125,8 @@ Here is an example response:
 			"gameMode": "CLASSIC",
 			"gameType": "MATCHED_GAME",
 			"custom": {
-				"largestMultiKill": 3
+				"largestMultiKill": 3,
+                "gameMinutes": 21
 			}
 		}
 	]
