@@ -140,7 +140,7 @@ export class ReplayManager {
         if (currentChunkId === metadata.lastChunkId) {
             lastChunkInfo.nextAvailableChunk = 90000;
             lastChunkInfo.endGameChunkId = metadata.endGameChunkId;
-            this.logInfo(`Client ${ip} has queried the last chunk of game ${gameId} (${region})`);
+            this.logInfo(`Client ${ip} has queried the last chunk info of game ${gameId} (${region})`);
         }
         return lastChunkInfo;
     }
