@@ -34,6 +34,11 @@ export class SpectatorManager {
             if (data['response']) {
                 const game: CurrentGameInfoDTO = data['response'];
 
+                if (this.spectators.find(s => s.game.gameId === game.gameId)) {
+                    this.logInfo(`Game ${game.gameId} is already being recorded!`);
+                    return true;
+                }
+
                 const spec: Spectator = new Spectator(game, Regions.EU_WEST, summonerName);
 
                 this.logInfo(`Started spectating ${summonerName} in game ${game.gameId} on server ${region}`);
