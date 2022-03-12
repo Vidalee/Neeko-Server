@@ -96,7 +96,7 @@ The summonerName option is the name of the summoner whose game you want to recor
 
 Additionally, you can specify a secret in `config.server.secret.spectate_secret`, and if `config.server.secret.check_spectate_secret` is enabled, the request will not go through unless you have a `Secret` header which value matches with `config.server.secret.spectate_secret`.
 
-When recording a game that has already started, you may see a lots of chunks unavailables on the console. These are not errors, it is just not possible to get the past data of a game, only the data from the moment ou started spectating.
+When recording a game that has already started, you may see a lots of chunks unavailables messages on the console. These are not errors, it is just not possible to get the past data of a game, only the data from the moment ou started spectating.
 
 ### GET `/spectate/statistics`
 
