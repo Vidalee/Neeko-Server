@@ -126,7 +126,7 @@ Here is an example response:
 			"gameType": "MATCHED_GAME",
 			"custom": {
 				"largestMultiKill": 3,
-                "gameMinutes": 21
+                                "gameMinutes": 21
 			}
 		}
 	]
