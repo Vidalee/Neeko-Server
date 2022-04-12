@@ -39,7 +39,7 @@ export class SpectatorManager {
                     return true;
                 }
 
-                const spec: Spectator = new Spectator(game, Regions.EU_WEST, summonerName);
+                const spec: Spectator = new Spectator(game, region, summonerName);
 
                 this.logInfo(`Started spectating ${summonerName} in game ${game.gameId} on server ${region}`);
                 spec.startSpectating();
