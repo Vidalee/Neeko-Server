@@ -98,7 +98,7 @@ Additionally, you can specify a secret in `config.server.secret.spectate_secret`
 
 When recording a game that has already started, you may see a lots of chunks unavailables messages on the console. These are not errors, it is just not possible to get the past data of a game, only the data from the moment ou started spectating.
 
-### GET `/spectate/statistics`
+### GET `/admin/statistics`
 
 As with the endpoint above, you can secure this one using `config.server.secret.statistics_secret`
 
