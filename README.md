@@ -34,35 +34,35 @@ Rename config.example.json to config.json.
 
 ```json
 {
-    "riot_api_key": "RGAPI-YOUR-API-KEY-HERE", // See next section for more information.
+    "riot_api_key": "RGAPI-YOUR-API-KEY-HERE",         // See next section for more information.
     "spectator_servers": {
-        ... // URLs of the League of Legends spectator servers for the different regions.
+        ...                                            // URLs of the League of Legends spectator servers for the different regions.
     },
     "paths": {
-        "games": "games" // Path of where the games recorded will be saved.
+        "games": "games"                               // Path of where the games recorded will be saved.
     },
     "server": {
-        "address": "127.0.0.1", // Address of the spectator server
-        "port": 3000, // Its port
-        "logger": false, // Wether to enable the fastify logger or not
+        "address": "127.0.0.1",                        // Spectator server address
+        "port": 3000,                                  // Spectator server port
+        "logger": false,                               // Enable Fastify logger
         "secrets": {
-            "spectate_secret": "spectate_secret", // Secret of the /spectate endpoint.
-            "check_spectate_secret": true, // Wether to use it or not
+            "spectate_secret": "spectate_secret",      // Secret of the /spectate endpoint.
+            "check_spectate_secret": true,             // Wether to use it or not
             "statistics_secret": "statistics_secret",  // Secret of the /spectate endpoint.
-            "check_statistics_secret": true // Wether to use it or not
+            "check_statistics_secret": true            // Wether to use it or not
         }
     },
     "spectator": {
-        "logger": true, // Our spectator client logger (used to record games).
-        "get_riot_match_details": true // Wether to download the corresponding match detail from the matchv5 Riot Games API endpoint.
+        "logger": true,                                // Enable spectator client logger (used to record games).
+        "get_riot_match_details": true                 // Use the riot_api_key to retrieve more information using the matchv5 Riot Games API endpoint.
     },
     "spectator_manager": {
-        "logger": true // Our SpectatorManager logger (used to spectate new games and give statistics).
+        "logger": true                                 // Our SpectatorManager logger (used to spectate new games and give statistics).
     },
     "replay_manager": {
-        "logger": true // Our ReplayManager logger (used to serve games to League of Legends clients).
+        "logger": true                                 // Our ReplayManager logger (used to serve games to League of Legends clients).
     },
-    "use_ansi_colors": true // If your terminal does not support ANSI escape code, set it to false.
+    "use_ansi_colors": true                            // If your terminal does not support ANSI escape code, set it to false.
 }
 ```
 
@@ -140,11 +140,10 @@ Here is an example response:
 
 Download a .bat file that will launch the League of Legends client to spectate the specified game ID on our spectator server. The corresponding game must have been recorded previously using the application.
 
-
 ## Development
 
 Feel free to propose any PR, they are very welcome especially on the fastify error code management (errors getting caught inside the router functions) and on the architecture of the project.
 
 ## Inspiration
 
-Special thanks to the loldevs team for their work on reversing the League of Legends spectator servers nearly a decade ago (https://github.com/loldevs/leaguespec) and more so to Divi for his past implementation of a spectator server (https://github.com/EloGank/lol-replay-downloader) that inspired me for the getLastChunkInfo endpoint implementation.
+Special thank to the loldevs team for their work on reversing the League of Legends spectator servers nearly a decade ago (https://github.com/loldevs/leaguespec) and more so to Divi for his past implementation of a spectator server (https://github.com/EloGank/lol-replay-downloader) that inspired me for the getLastChunkInfo endpoint implementation.
