@@ -2,7 +2,7 @@ import axios from "axios";
 import * as config from "../config.json";
 import { ANSI } from "../src/utils/ANSI";
 
-const skipServers = ["PBE1"];
+const skipServers = [];
 
 const regions = Object.entries(config.spectator_servers).map(([region, ip]) => {
     return { region, ip };
