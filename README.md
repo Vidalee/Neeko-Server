@@ -1,5 +1,5 @@
 
-# Neeko-Server ![example workflow](https://github.com/Vidalee/Neeko-Server/actions/workflows/build.yaml/badge.svg)
+# Neeko-Server ![example workflow](https://github.com/Vidalee/Neeko-Server/actions/workflows/build.yaml/badge.svg) ![example workflow](https://github.com/Vidalee/Neeko-Server/actions/workflows/check_servers.yaml/badge.svg)
 
 Neeko-Server is an application that record games emulates a League of Legends spectator server to serve them to the League of Legends client.
 
