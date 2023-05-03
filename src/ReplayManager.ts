@@ -146,19 +146,14 @@ export class ReplayManager {
     }
 
     private findKeyFrameByChunkId(metadata: IMetaData, chunkId: number): number {
+        let keyFrameId = 1;
         for (let keyFrameInfo of metadata.pendingAvailableKeyFrameInfo) {
-            if (keyFrameInfo.nextChunkId === chunkId) {
-                return keyFrameInfo.keyFrameId;
+            if (keyFrameInfo.nextChunkId > chunkId) {
+                break;
             }
+            keyFrameId = keyFrameInfo.keyFrameId;
         }
-
-        for (let keyFrameInfo of metadata.pendingAvailableKeyFrameInfo) {
-            if (keyFrameInfo.nextChunkId === chunkId - 1) {
-                return keyFrameInfo.keyFrameId;
-            }
-        }
-
-        throw new Error("keyframe not found for chunkId: " + chunkId);
+        return keyFrameId;
     }
 
     private async testGameExists(gameId: string): Promise<void> {
