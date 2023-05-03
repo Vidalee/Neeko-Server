@@ -1,7 +1,7 @@
 {
     "riot_api_key": "RGAPI-YOUR-API-KEY-hERE",
     "spectator_servers": {
-        "EUW1": "185.40.64.163:80",
+        "EUW1": "spectator-consumer.euw1.lol.pvp.net",
         "NA1": "192.64.174.163:80",
         "EUN1": "110.45.191.11:8088",
         "KR": "110.45.191.11:8088",
