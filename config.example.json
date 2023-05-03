@@ -1,5 +1,5 @@
 {
-    "riot_api_key": "RGAPI-39eb9720-162f-4ce8-b5cf-a7f9dbe50cb0",
+    "riot_api_key": "RGAPI-YOUR-API-KEY-HERE",
     "spectator_servers": {
         "EUW1": "spectator-consumer.euw1.lol.pvp.net",
         "NA1": "spectator-consumer.na1.lol.pvp.net",
