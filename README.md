@@ -5,7 +5,6 @@ Neeko-Server is an application that record games emulates a League of Legends sp
 
 It is an asynchronous software capable of recording multiple League of Legends live games at the same time, while simultaneously allowing multiple League of Legends clients to watch different games at the same time.
 
-
 If you have any questions of want to participate to the development, feel free to join this Discord server: https://discord.gg/gqkjwBK58Z
 
 ## Building
@@ -31,7 +30,7 @@ yarn start
 
 ## Configuration
 
-Rename config.example.json to config.json.
+Ensure that you customize the config.json file according to your requirements, as it handles all the configuration settings.
 
 ```json
 {
@@ -79,7 +78,7 @@ Thus, if you want to fully use this application your API key must have access to
 /lol/match/v5/matches/{matchId}
 ```
 
-If you just want to serve games you already recorded, the API key is not necessary.
+The API key is not required if you only intend to serve games that you have already recorded.
 
 ## Server endpoints
 
