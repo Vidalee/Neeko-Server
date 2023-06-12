@@ -39,7 +39,7 @@ async function testServers() {
                 const featuredGames = (await axios.get(`http://${server.ip}/observer-mode/rest/featured`)).data;
                 if (featuredGames.gameList.length == 0) {
                     server.errorMessage =
-                        "Featured games list is empty - The spectator consumer is not connected to LoL servers";
+                        "Featured games list is empty - The spectator consumer may not be connected to LoL servers";
                     return server;
                 }
                 server.success = true;
