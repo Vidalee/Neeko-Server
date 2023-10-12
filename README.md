@@ -24,7 +24,12 @@ yarn install
 ```shell
 yarn build
 ```
-#### 4. Start
+#### 5. Test that every region has a working spectator server
+```shell
+yarn test
+```
+
+#### 5. Start
 ```shell
 yarn start
 ```
