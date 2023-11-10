@@ -19,7 +19,7 @@
     "dev": "npm run build && npm run start"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.6.0",
     "fastify": "^3.29.4",
     "rimraf": "^3.0.2",
     "twisted": "^1.46.5"
