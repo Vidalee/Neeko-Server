@@ -1,6 +1,8 @@
 
 # Neeko-Server ![example workflow](https://github.com/Vidalee/Neeko-Server/actions/workflows/build.yaml/badge.svg) ![example workflow](https://github.com/Vidalee/Neeko-Server/actions/workflows/check_servers.yaml/badge.svg)
 
+## ⚠ Doesn't work for patch 14.1 and onwards, working to fix it, see [Issue 25](https://github.com/Vidalee/Neeko-Server/issues/25)  ⚠
+
 Neeko-Server is an application that record games emulates a League of Legends spectator server to serve them to the League of Legends client.
 
 It is an asynchronous software capable of recording multiple League of Legends live games at the same time, while simultaneously allowing multiple League of Legends clients to watch different games at the same time.
@@ -89,20 +91,20 @@ If you just want to serve games you already recorded, the API key is not necessa
 ## Server endpoints
 
 
-### GET `/admin/spectate/:region/:summonerName`
+### GET `/admin/spectate/:region/:gameName/:tagLine`
 
 
-Record the live game of a summoner. The region options are:
+Record the live game of a riot account. The region options are:
 
 ```
 BR1, EUN1, EUW1, KR, LA1, LA2, NA1, OC1, TR1, RU, JP1 and PBE1
 ```
 
-The summonerName option is the name of the summoner whose game you want to record.
+The gameName and tagLine options are depends of the target riot account. For `Vivi#EUW` the gameName is `Vivi` and the tagLine is `EUW`.
 
 Additionally, you can specify a secret in `config.server.secret.spectate_secret`, and if `config.server.secret.check_spectate_secret` is enabled, the request will not go through unless you have a `Secret` header which value matches with `config.server.secret.spectate_secret`.
 
-When recording a game that has already started, you may see a lots of chunks unavailables messages on the console. These are not errors, it is just not possible to get the past data of a game, only the data from the moment ou started spectating.
+When recording a game that has already started, you may see a lots of chunks unavailables messages on the console. These are not errors, it is just impossible to get the past data of a game, only the data from the moment you started spectating.
 
 ### GET `/admin/statistics`
 

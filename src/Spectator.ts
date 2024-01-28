@@ -1,17 +1,19 @@
 import * as config from "../config.json"
-import { Regions } from 'twisted/dist/constants/regions';
-import { CurrentGameInfoDTO } from 'twisted/dist/models-dto';
-import axios from 'axios';
-import * as fsp from 'fs/promises';
 import * as fs from 'fs';
-import { IMetaData } from "./interfaces/IMetaData";
+import * as fsp from 'fs/promises';
+
 import { fileExists, getDate } from "./utils/Utils";
-import { ILastChunkInfo } from "./interfaces/ILastChunkInfo";
+
 import { ANSI } from "./utils/ANSI";
-import { Logger } from "./utils/Logger";
-import { getGameById } from "./RiotAPIHandler";
-import { IStatisticsSpectator } from "./interfaces/IStatistics";
+import { CurrentGameInfoDTO } from 'twisted/dist/models-dto';
 import { ICurrentGameInfo } from "./interfaces/ICurrentGameInfo";
+import { ILastChunkInfo } from "./interfaces/ILastChunkInfo";
+import { IMetaData } from "./interfaces/IMetaData";
+import { IStatisticsSpectator } from "./interfaces/IStatistics";
+import { Logger } from "./utils/Logger";
+import { Regions } from 'twisted/dist/constants/regions';
+import axios from 'axios';
+import { getGameById } from "./RiotAPIHandler";
 
 export class Spectator {
     readonly BASE: string = "/observer-mode/rest/consumer";
@@ -152,6 +154,8 @@ export class Spectator {
             const response = await axios.get(path);
             this.lastKeyFrameInfo = response.data;
         } catch (error) {
+            console.log(error)
+
             this.logError(`This game is not available on this spectator server. Error: ${error}`);
         }
     }
