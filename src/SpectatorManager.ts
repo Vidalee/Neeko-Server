@@ -1,15 +1,17 @@
-import { Regions } from "twisted/dist/constants";
-import * as fsp from 'fs/promises';
 import * as config from "../config.json";
-import { fileExists } from "./utils/Utils";
+import * as fsp from 'fs/promises';
+
 import { ApiResponseDTO, CurrentGameInfoDTO, MatchV5DTOs, SpectatorNotAvailableDTO } from "twisted/dist/models-dto";
-import { activeGame } from "./RiotAPIHandler";
-import { Spectator } from "./Spectator";
-import { ANSI } from "./utils/ANSI";
-import { Logger } from "./utils/Logger";
 import { IStatistics, IStatisticsGame } from "./interfaces/IStatistics";
-import { IMetaData } from "./interfaces/IMetaData";
+
+import { ANSI } from "./utils/ANSI";
 import { ICurrentGameInfo } from "./interfaces/ICurrentGameInfo";
+import { IMetaData } from "./interfaces/IMetaData";
+import { Logger } from "./utils/Logger";
+import { Regions } from "twisted/dist/constants";
+import { Spectator } from "./Spectator";
+import { activeGame } from "./RiotAPIHandler";
+import { fileExists } from "./utils/Utils";
 import getCustomGameStats from "./utils/getCustomGameStats";
 
 export class SpectatorManager {
@@ -28,9 +30,9 @@ export class SpectatorManager {
         return SpectatorManager._instance;
     }
 
-    public async spectateBySummonerName(summonerName: string, region: Regions): Promise<boolean> {
+    public async spectateBySummonerName(gameName: string, tagLine: string, region: Regions): Promise<boolean> {
         try {
-            const data: SpectatorNotAvailableDTO | ApiResponseDTO<CurrentGameInfoDTO> = await activeGame(summonerName, region);
+            const data: SpectatorNotAvailableDTO | ApiResponseDTO<CurrentGameInfoDTO> = await activeGame(gameName, tagLine, region);
             if (data['response']) {
                 const game: CurrentGameInfoDTO = data['response'];
 
@@ -39,17 +41,17 @@ export class SpectatorManager {
                     return true;
                 }
 
-                const spec: Spectator = new Spectator(game, region, summonerName);
+                const spec: Spectator = new Spectator(game, region, `${gameName}#${tagLine}`);
 
-                this.logInfo(`Started spectating ${summonerName} in game ${game.gameId} on server ${region}`);
+                this.logInfo(`Started spectating ${gameName}#${tagLine} in game ${game.gameId} on server ${region}`);
                 spec.startSpectating();
                 this.spectators.push(spec);
                 return true;
             }
-            this.logInfo(`Cannot spectate ${summonerName} since they are not in a game`);
+            this.logInfo(`Cannot spectate ${gameName}#${tagLine} since they are not in a game`);
             return false;
         } catch (err) {
-            this.logInfo(`Cannot spectate ${summonerName} since they are not in a game`);
+            this.logInfo(`Cannot spectate ${gameName}#${tagLine} since they are not in a game`);
             return false;
         }
     }

@@ -1,11 +1,12 @@
 import { SpectatorManager } from "../SpectatorManager";
 
 export default async function routes(fastify) {
-    fastify.get('/spectate/:region/:summonerName', async (request, reply) => {
+    fastify.get("/spectate/:region/:gameName/:tagLine", async (request, reply) => {
         const region = request.params.region;
-        const summonerName = request.params.summonerName;
-        
-        if (!region || !summonerName) {
+        const gameName = request.params.gameName;
+        const tagLine = request.params.tagLine;
+
+        if (!region || !gameName || !tagLine) {
             reply.code(400).send("Missing parameters");
             return;
         }
@@ -14,15 +15,15 @@ export default async function routes(fastify) {
             return;
         }
 
-        if(fastify.secrets.check_spectate_secret && fastify.secrets.spectate_secret !== request.headers.secret){
+        if (fastify.secrets.check_spectate_secret && fastify.secrets.spectate_secret !== request.headers.secret) {
             reply.code(403).send("Invalid secret");
             return;
         }
 
-        if(await SpectatorManager.getInstance().spectateBySummonerName(summonerName, region)){
-            reply.code(200).send(`Spectating ${summonerName}.`);
-        }else{
-            reply.code(200).send(`Summoner ${summonerName} not in game or not found.`);
+        if (await SpectatorManager.getInstance().spectateBySummonerName(gameName, tagLine, region)) {
+            reply.code(200).send(`Spectating ${gameName}#${tagLine}.`);
+        } else {
+            reply.code(200).send(`Summoner ${gameName}#${tagLine} not in game or not found.`);
         }
     });
 }
