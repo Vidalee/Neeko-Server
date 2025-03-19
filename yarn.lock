@@ -480,10 +480,10 @@ tiny-lru@^8.0.1:
   resolved "https://registry.npmjs.org/tiny-lru/-/tiny-lru-8.0.1.tgz"
   integrity sha512-eBIAYA0BzSjxBedCaO0CSjertD+u+IvNuFkyD7ESf+qjqHKBr5wFqvEYl91+ZQd7jjq2pO6/fBVwFgb6bxvorw==
 
-twisted@^1.57.0:
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/twisted/-/twisted-1.57.0.tgz#0fb70f4836a3cf1caaec0ffd952cfe5a16343781"
-  integrity sha512-5NeGxtxalP+IyFqTZ0zMWNk6Q4eCH8GiQEnVo6ofTE4fctKoTHW76zIkjBEYtyPnX1Dxjn55rSXMAHilw2teMw==
+twisted@^1.63.2:
+  version "1.63.2"
+  resolved "https://registry.yarnpkg.com/twisted/-/twisted-1.63.2.tgz#fffc9300290710582773e9ca4176e89bd91ac9e0"
+  integrity sha512-NXP4Mgk6Zj+Fc/MWe0eYMBd3SNFXcok6tCUqR3B23w5FBhxD6CXlvD53L3j+OxsQRa6Vp3QxnqABkd2XiP/uvg==
   dependencies:
     axios "^1.6.2"
     dotenv "^16.3.1"

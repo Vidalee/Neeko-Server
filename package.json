@@ -22,7 +22,7 @@
     "axios": "^1.6.0",
     "fastify": "^3.29.4",
     "rimraf": "^3.0.2",
-    "twisted": "^1.57.0"
+    "twisted": "^1.63.2"
   },
   "devDependencies": {
     "@types/node": "^18.16.3",

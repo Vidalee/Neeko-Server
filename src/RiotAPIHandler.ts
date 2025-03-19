@@ -9,8 +9,7 @@ const riotApi = new RiotApi({ key: config.riot_api_key })
 
 export async function activeGame(gameName: string, tagLine, region: Regions): Promise<ApiResponseDTO<CurrentGameInfoDTO> | SpectatorNotAvailableDTO> {
     const { puuid } = (await riotApi.Account.getByRiotId(gameName, tagLine, Constants.RegionGroups.EUROPE)).response;
-    const { response: { id } } = await lolApi.Summoner.getByPUUID(puuid, region)
-    return await lolApi.Spectator.activeGame(id, region)
+    return await lolApi.SpectatorV5.activeGame(puuid, region)
 }
 
 export async function getGameById(gameId: string, region: Regions): Promise<ApiResponseDTO<MatchV5DTOs.MatchDto>> {
