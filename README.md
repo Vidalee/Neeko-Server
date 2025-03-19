@@ -82,7 +82,7 @@ Thus, if you want to fully use this application your API key must have access to
 
 ```
 /lol/summoner/v4/summoners/by-name/{summonerName}
-/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}
+/lol/spectator/v5/active-games/by-summoner/{encryptedPUUID}
 /lol/match/v5/matches/{matchId}
 ```
 
