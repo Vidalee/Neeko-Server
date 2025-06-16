@@ -1,19 +1,19 @@
 {
     "riot_api_key": "RGAPI-YOUR-API-KEY-HERE",
     "spectator_servers": {
-        "EUW1": "spectator-consumer.euw1.lol.pvp.net",
-        "NA1": "spectator-consumer.na1.lol.pvp.net",
-        "EUN1": "spectator-consumer.eun1.lol.pvp.net",
-        "KR": "spectator-consumer.kr.lol.pvp.net",
-        "BR1": "spectator-consumer.br1.lol.pvp.net",
-        "TR1": "spectator-consumer.tr1.lol.pvp.net",
-        "TW": "spectator-consumer.tw2.lol.pvp.net",
-        "LA1": "spectator-consumer.la1.lol.pvp.net",
-        "LA2": "spectator-consumer.la2.lol.pvp.net",
-        "RU": "spectator-consumer.ru.lol.pvp.net",
-        "PBE1": "spectator-consumer.pbe1.lol.pvp.net",
-        "OC1": "spectator-consumer.oc1.lol.pvp.net",
-        "JP1": "spectator-consumer.jp1.lol.pvp.net"
+        "EUW1": "spectator.euw1.lol.pvp.net:8080",
+        "NA1": "spectator.na1.lol.pvp.net:8080",
+        "EUN1": "spectator.eun1.lol.pvp.net:8080",
+        "KR": "spectator.kr.lol.pvp.net:8080",
+        "BR1": "spectator.br1.lol.pvp.net:8080",
+        "TR1": "spectator.ru.lol.pvp.net:8080",
+        "TW": "spectator.tw2.lol.pvp.net:8080",
+        "LA1": "spectator.la1.lol.pvp.net:8080",
+        "LA2": "spectator.la2.lol.pvp.net:8080",
+        "RU": "spectator.ru.lol.pvp.net:8080",
+        "PBE1": "spectator.pbe1.lol.pvp.net:8080",
+        "OC1": "spectator.oc1.lol.pvp.net:8080",
+        "JP1": "spectator.jp1.lol.pvp.net:8080"
     },
     "paths": {
         "games": "games"
